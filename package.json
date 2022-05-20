@@ -1,15 +1,17 @@
 {
-  "name": "beer-shop",
-  "version": "1.0.0",
-  "description": "Litle Beer Shop System",
-  "main": "index.js",
-  "author": "Matheus R. Brunelli",
-  "license": "MIT",
-  "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.25.0",
-    "@typescript-eslint/parser": "^5.25.0",
-    "eslint": "^8.15.0",
-    "git-commit-msg-linter": "^4.1.2",
-    "typescript": "^4.6.4"
-  }
+    "name": "beer-shop",
+    "version": "1.0.0",
+    "description": "Litle Beer Shop System",
+    "main": "index.js",
+    "author": "Matheus R. Brunelli",
+    "license": "MIT",
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^5.25.0",
+        "@typescript-eslint/parser": "^5.25.0",
+        "eslint": "^8.15.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-prettier": "^4.0.0",
+        "git-commit-msg-linter": "^4.1.2",
+        "typescript": "^4.6.4"
+    }
 }
