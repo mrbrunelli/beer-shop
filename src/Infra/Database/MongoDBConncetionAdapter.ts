@@ -14,7 +14,7 @@ export default class MongoDBConnectionAdapter implements Connection {
     }
 
     async find(params: any): Promise<any> {
-        throw new Error("Method not implemented.");
+        return this.client?.db("beer").collection("items").find(params).toArray();
     }
 
     async findOne(params: any): Promise<any> {
@@ -22,7 +22,13 @@ export default class MongoDBConnectionAdapter implements Connection {
     }
 
     async findById(id: string): Promise<any> {
-        const { _id, ...rest } = await this.findOne({ _id: new ObjectId(id) });
+        const document = await this.findOne({ _id: new ObjectId(id) });
+
+        if (!document) {
+            return null;
+        }
+
+        const { _id, ...rest } = document;
 
         return {
             _id: _id.toString(),

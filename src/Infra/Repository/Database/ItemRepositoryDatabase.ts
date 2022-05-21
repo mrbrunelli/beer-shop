@@ -5,8 +5,8 @@ import Connection from "../../Database/Connection";
 export default class ItemRepositoryDatabase implements ItemRepository {
     constructor(readonly connection: Connection) {}
 
-    getAll(): Promise<Item[]> {
-        throw new Error("Method not implemented.");
+    getAll(params: any): Promise<Item[]> {
+        return this.connection.find(params);
     }
 
     getById(id: string): Promise<Item | undefined> {
