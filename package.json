@@ -1,8 +1,7 @@
 {
     "name": "beer-shop",
     "version": "1.0.0",
-    "description": "Litle Beer Shop System",
-    "main": "index.js",
+    "description": "Little Beer Shop System",
     "author": "Matheus R. Brunelli",
     "license": "MIT",
     "devDependencies": {
