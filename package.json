@@ -6,6 +6,7 @@
     "license": "MIT",
     "devDependencies": {
         "@types/jest": "^27.5.1",
+        "@types/mongodb": "^4.0.7",
         "@typescript-eslint/eslint-plugin": "^5.25.0",
         "@typescript-eslint/parser": "^5.25.0",
         "eslint": "^8.15.0",
@@ -19,5 +20,8 @@
     "scripts": {
         "test": "jest --runInBand",
         "tdd": "jest --watch"
+    },
+    "dependencies": {
+        "mongodb": "^4.6.0"
     }
 }
