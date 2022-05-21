@@ -22,5 +22,5 @@ test("Should register an Item", async () => {
     };
     const output = await registerItem.execute(input);
     expect(output.id).toBeDefined();
-    expect(output.id).toHaveLength(36);
+    expect(output.id).toHaveLength(24);
 });

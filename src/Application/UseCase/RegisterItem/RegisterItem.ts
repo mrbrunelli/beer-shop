@@ -1,4 +1,4 @@
-import crypto from "node:crypto";
+import { ObjectId } from "mongodb";
 import Item from "../../../Domain/Entity/Item";
 import RepositoryFactory from "../../../Domain/Factory/RepositoryFactory";
 import ItemRepository from "../../../Domain/Repository/ItemRepository";
@@ -13,7 +13,7 @@ export default class RegisterItem {
     }
 
     async execute(input: RegisterItemInput): Promise<RegisterItemOutput> {
-        const id = crypto.randomUUID();
+        const id = new ObjectId().toString();
 
         const item = new Item(id, input.description, input.price, input.size, input.abv, input.ingredients);
         await this.itemRepository.save(item);
