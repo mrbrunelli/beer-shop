@@ -16,7 +16,7 @@ export default class GetItem {
             throw new Error("Item not Found");
         }
 
-        const output = new GetItemOutput(item._id, item.description, item.price);
+        const output = new GetItemOutput(item.id, item.description, item.price);
         return output;
     }
 }

@@ -2,7 +2,7 @@ import Ingredients from "./Ingredients";
 
 export default class Item {
     constructor(
-        readonly _id: string,
+        readonly id: string,
         readonly description: string,
         readonly price: number,
         readonly size: number,

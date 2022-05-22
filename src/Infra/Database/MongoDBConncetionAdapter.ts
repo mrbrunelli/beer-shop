@@ -1,4 +1,4 @@
-import { MongoClient, ObjectId } from "mongodb";
+import { MongoClient, ObjectId, WithId } from "mongodb";
 import Connection from "./Connection";
 
 export default class MongoDBConnectionAdapter implements Connection {
@@ -18,11 +18,7 @@ export default class MongoDBConnectionAdapter implements Connection {
     }
 
     async findOne(params: any): Promise<any> {
-        return this.client?.db("beer").collection("items").findOne(params);
-    }
-
-    async findById(id: string): Promise<any> {
-        const document = await this.findOne({ _id: new ObjectId(id) });
+        const document: any = await this.client?.db("beer").collection("items").findOne(params);
 
         if (!document) {
             return null;
@@ -31,22 +27,26 @@ export default class MongoDBConnectionAdapter implements Connection {
         const { _id, ...rest } = document;
 
         return {
-            _id: _id.toString(),
+            id: _id.toString(),
             ...rest,
         };
     }
 
-    async insertOne(params: any): Promise<void> {
-        const { _id, ...rest } = params;
+    async findById(id: string): Promise<any> {
+        return this.findOne({ _id: new ObjectId(id) });
+    }
 
-        if (!_id) {
+    async insertOne(params: any): Promise<void> {
+        const { id, ...rest } = params;
+
+        if (!id) {
             throw new Error("Identifier (_id) is required");
         }
 
         await this.client
             ?.db("beer")
             .collection("items")
-            .insertOne({ _id: new ObjectId(_id), ...rest });
+            .insertOne({ _id: new ObjectId(id), ...rest });
     }
 
     async deleteMany(): Promise<void> {

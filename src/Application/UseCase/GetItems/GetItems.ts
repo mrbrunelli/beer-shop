@@ -14,7 +14,7 @@ export default class GetItems {
         const output: GetItemsOutput[] = [];
 
         for (const item of items) {
-            output.push(new GetItemsOutput(item._id, item.description, item.price));
+            output.push(new GetItemsOutput(item.id, item.description, item.price));
         }
 
         return output;
