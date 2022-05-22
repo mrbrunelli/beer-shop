@@ -1,0 +1,2 @@
+- [ ] Minha Infra está conhecendo meu Domain. O correto seria a Infra conhecer apenas minha camada Application.
+- [ ] Seguir esse fluxo Infra -> Application -> Domain
