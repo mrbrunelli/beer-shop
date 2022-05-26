@@ -17,5 +17,11 @@ export default class Router {
             const output = await itemsController.getItem(params.id);
             return output;
         });
+
+        this.http.route("post", "/items", async (params: any, body: any) => {
+            const itemsController = new ItemsController(this.repositoryFactory);
+            const output = await itemsController.registerItem(body);
+            return output;
+        });
     }
 }
