@@ -2,23 +2,23 @@ import { MongoClient, ObjectId, WithId } from "mongodb";
 import Connection from "./Connection";
 
 export default class MongoDBConnectionAdapter implements Connection {
-    private client: MongoClient | undefined;
+    private client: MongoClient;
 
     constructor() {
+        this.client = new MongoClient("mongodb://beer:beer@localhost:27017");
         this.init();
     }
 
     private async init() {
-        this.client = new MongoClient("mongodb://beer:beer@localhost:27017");
         await this.client.connect();
     }
 
     async find(params: any): Promise<any> {
-        return this.client?.db("beer").collection("items").find(params).toArray();
+        return this.client.db("beer").collection("items").find(params).toArray();
     }
 
     async findOne(params: any): Promise<any> {
-        const document: any = await this.client?.db("beer").collection("items").findOne(params);
+        const document: any = await this.client.db("beer").collection("items").findOne(params);
 
         if (!document) {
             return null;
@@ -50,10 +50,10 @@ export default class MongoDBConnectionAdapter implements Connection {
     }
 
     async deleteMany(): Promise<void> {
-        await this.client?.db("beer").collection("items").deleteMany({});
+        await this.client.db("beer").collection("items").deleteMany({});
     }
 
     async close(): Promise<void> {
-        await this.client?.close();
+        await this.client.close();
     }
 }
