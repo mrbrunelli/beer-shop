@@ -1,4 +1,4 @@
-import { MongoClient, ObjectId, WithId } from "mongodb";
+import { MongoClient, ObjectId } from "mongodb";
 import Connection from "./Connection";
 
 export default class MongoDBConnectionAdapter implements Connection {
