@@ -4,7 +4,7 @@ import Ingredients from "../../src/Domain/Entity/Ingredients";
 import RepositoryFactory from "../../src/Domain/Factory/RepositoryFactory";
 import ObjectIdGenerator from "../../src/Domain/Service/ObjectIdGenerator";
 import Connection from "../../src/Infra/Database/Connection";
-import MongoDBConnectionAdapter from "../../src/Infra/Database/MongoDBConncetionAdapter";
+import MongoDBConnectionAdapter from "../../src/Infra/Database/MongoDBConnectionAdapter";
 import DatabaseRepositoryFactory from "../../src/Infra/Factory/DatabaseRepositoryFactory";
 import ObjectIdGeneratorAdapter from "../../src/Infra/Service/ObjectIdGeneratorAdapter";
 
