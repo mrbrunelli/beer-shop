@@ -1,4 +1,4 @@
-import Ingredients from "../../../Domain/Entity/Ingredients";
+import Ingredients from "@/Domain/Entity/Ingredients";
 
 export default class RegisterItemInput {
     constructor(

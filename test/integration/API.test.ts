@@ -1,12 +1,12 @@
+import RegisterItem from "@/Application/UseCase/RegisterItem/RegisterItem";
+import Ingredients from "@/Domain/Entity/Ingredients";
+import RepositoryFactory from "@/Domain/Factory/RepositoryFactory";
+import ObjectIdGenerator from "@/Application/Protocols/ObjectIdGenerator";
+import Connection from "@/Infra/Database/Connection";
+import MongoDBConnectionAdapter from "@/Infra/Database/MongoDBConnectionAdapter";
+import DatabaseRepositoryFactory from "@/Infra/Factory/DatabaseRepositoryFactory";
+import ObjectIdGeneratorAdapter from "@/Infra/Service/ObjectIdGeneratorAdapter";
 import axios from "axios";
-import RegisterItem from "../../src/Application/UseCase/RegisterItem/RegisterItem";
-import Ingredients from "../../src/Domain/Entity/Ingredients";
-import RepositoryFactory from "../../src/Domain/Factory/RepositoryFactory";
-import ObjectIdGenerator from "../../src/Application/Protocols/ObjectIdGenerator";
-import Connection from "../../src/Infra/Database/Connection";
-import MongoDBConnectionAdapter from "../../src/Infra/Database/MongoDBConnectionAdapter";
-import DatabaseRepositoryFactory from "../../src/Infra/Factory/DatabaseRepositoryFactory";
-import ObjectIdGeneratorAdapter from "../../src/Infra/Service/ObjectIdGeneratorAdapter";
 
 let connection: Connection;
 let repositoryFactory: RepositoryFactory;

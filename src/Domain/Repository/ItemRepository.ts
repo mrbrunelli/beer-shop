@@ -1,4 +1,4 @@
-import Item from "../Entity/Item";
+import Item from "@/Domain/Entity/Item";
 
 export default interface ItemRepository {
     getAll(params?: any): Promise<Item[]>;

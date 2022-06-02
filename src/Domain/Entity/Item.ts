@@ -1,4 +1,4 @@
-import Ingredients from "./Ingredients";
+import Ingredients from "@/Domain/Entity/Ingredients";
 
 export default class Item {
     constructor(

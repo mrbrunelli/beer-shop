@@ -1,5 +1,5 @@
+import Connection from "@/Infra/Database/Connection";
 import { MongoClient, ObjectId } from "mongodb";
-import Connection from "./Connection";
 
 export default class MongoDBConnectionAdapter implements Connection {
     private client: MongoClient;

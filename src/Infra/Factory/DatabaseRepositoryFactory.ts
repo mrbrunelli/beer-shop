@@ -1,7 +1,7 @@
-import RepositoryFactory from "../../Domain/Factory/RepositoryFactory";
-import ItemRepository from "../../Domain/Repository/ItemRepository";
-import Connection from "../Database/Connection";
-import ItemRepositoryDatabase from "../Repository/Database/ItemRepositoryDatabase";
+import RepositoryFactory from "@/Domain/Factory/RepositoryFactory";
+import ItemRepository from "@/Domain/Repository/ItemRepository";
+import Connection from "@/Infra/Database/Connection";
+import ItemRepositoryDatabase from "@/Infra/Repository/Database/ItemRepositoryDatabase";
 
 export default class DatabaseRepositoryFactory implements RepositoryFactory {
     constructor(readonly connection: Connection) {}

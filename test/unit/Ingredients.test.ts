@@ -1,4 +1,4 @@
-import Ingredients from "../../src/Domain/Entity/Ingredients";
+import Ingredients from "@/Domain/Entity/Ingredients";
 
 test("Should to be defined", () => {
     const ing = new Ingredients("água", "malte", "milho", "lúpulo");

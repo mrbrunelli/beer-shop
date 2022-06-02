@@ -1,6 +1,6 @@
-import RepositoryFactory from "../../../Domain/Factory/RepositoryFactory";
-import ItemRepository from "../../../Domain/Repository/ItemRepository";
-import GetItemOutput from "./GetItemOutput";
+import RepositoryFactory from "@/Domain/Factory/RepositoryFactory";
+import ItemRepository from "@/Domain/Repository/ItemRepository";
+import GetItemOutput from "@/Application/UseCase/GetItem/GetItemOutput";
 
 export default class GetItem {
     itemRepository: ItemRepository;
