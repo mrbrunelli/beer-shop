@@ -7,6 +7,7 @@ import Connection from "@/Infra/Database/Connection";
 import MongoDBConnectionAdapter from "@/Infra/Database/MongoDBConnectionAdapter";
 import DatabaseRepositoryFactory from "@/Infra/Factory/DatabaseRepositoryFactory";
 import ObjectIdGeneratorAdapter from "@/Infra/Service/ObjectIdGeneratorAdapter";
+import env from "@/Infra/Config/env";
 
 let connection: Connection;
 let repositoryFactory: RepositoryFactory;
@@ -14,7 +15,7 @@ let objectIdGenerator: ObjectIdGenerator;
 
 beforeEach(async () => {
     objectIdGenerator = new ObjectIdGeneratorAdapter();
-    connection = new MongoDBConnectionAdapter();
+    connection = new MongoDBConnectionAdapter(env.mongoUrl);
     repositoryFactory = new DatabaseRepositoryFactory(connection);
     const itemRepository = repositoryFactory.createItemRepository();
     await itemRepository.clean();

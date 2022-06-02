@@ -26,7 +26,7 @@ export default class ExpressAdapter implements Http {
         });
     }
 
-    async listen(port: number): Promise<void> {
-        await this.app.listen(port);
+    async listen(port: number): Promise<any> {
+        return this.app.listen(port);
     }
 }

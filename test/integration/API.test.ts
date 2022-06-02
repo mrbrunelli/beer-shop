@@ -6,22 +6,36 @@ import Connection from "@/Infra/Database/Connection";
 import MongoDBConnectionAdapter from "@/Infra/Database/MongoDBConnectionAdapter";
 import DatabaseRepositoryFactory from "@/Infra/Factory/DatabaseRepositoryFactory";
 import ObjectIdGeneratorAdapter from "@/Infra/Service/ObjectIdGeneratorAdapter";
+import env from "@/Infra/Config/env";
 import axios from "axios";
+import ExpressAdapter from "@/Infra/Http/ExpressAdapter";
+import Router from "@/Infra/Http/Router";
 
 let connection: Connection;
 let repositoryFactory: RepositoryFactory;
 let objectIdGenerator: ObjectIdGenerator;
+let server: any;
+
+beforeAll(async () => {
+    objectIdGenerator = new ObjectIdGeneratorAdapter();
+    connection = new MongoDBConnectionAdapter(env.mongoUrl);
+    repositoryFactory = new DatabaseRepositoryFactory(connection);
+
+    const http = new ExpressAdapter();
+    const router = new Router(http, repositoryFactory);
+
+    router.init();
+    server = await http.listen(env.port);
+});
 
 beforeEach(async () => {
-    objectIdGenerator = new ObjectIdGeneratorAdapter();
-    connection = new MongoDBConnectionAdapter();
-    repositoryFactory = new DatabaseRepositoryFactory(connection);
     const itemsRepository = repositoryFactory.createItemRepository();
     await itemsRepository.clean();
 });
 
-afterEach(async () => {
+afterAll(async () => {
     await connection.close();
+    await server.close();
 });
 
 test("Should execute GET /items", async () => {

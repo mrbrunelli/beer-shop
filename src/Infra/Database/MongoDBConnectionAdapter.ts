@@ -4,8 +4,8 @@ import { MongoClient, ObjectId } from "mongodb";
 export default class MongoDBConnectionAdapter implements Connection {
     private client: MongoClient;
 
-    constructor() {
-        this.client = new MongoClient("mongodb://beer:beer@localhost:27017");
+    constructor(url: string) {
+        this.client = new MongoClient(url);
         this.init();
     }
 
