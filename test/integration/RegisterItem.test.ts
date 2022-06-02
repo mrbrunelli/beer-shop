@@ -1,9 +1,9 @@
-import RegisterItem from "../../src/Application/UseCase/RegisterItem/RegisterItem";
-import Ingredients from "../../src/Domain/Entity/Ingredients";
-import RepositoryFactory from "../../src/Domain/Factory/RepositoryFactory";
-import ObjectIdGenerator from "../../src/Application/Protocols/ObjectIdGenerator";
-import MemoryRepositoryFactory from "../../src/Infra/Factory/MemoryRepositoryFactory";
-import ObjectIdGeneratorAdapter from "../../src/Infra/Service/ObjectIdGeneratorAdapter";
+import RegisterItem from "@/Application/UseCase/RegisterItem/RegisterItem";
+import Ingredients from "@/Domain/Entity/Ingredients";
+import RepositoryFactory from "@/Domain/Factory/RepositoryFactory";
+import ObjectIdGenerator from "@/Application/Protocols/ObjectIdGenerator";
+import MemoryRepositoryFactory from "@/Infra/Factory/MemoryRepositoryFactory";
+import ObjectIdGeneratorAdapter from "@/Infra/Service/ObjectIdGeneratorAdapter";
 
 let repositoryFactory: RepositoryFactory;
 let objectIdGenerator: ObjectIdGenerator;

@@ -1,6 +1,6 @@
-import Ingredients from "../../../Domain/Entity/Ingredients";
-import Item from "../../../Domain/Entity/Item";
-import ItemRepository from "../../../Domain/Repository/ItemRepository";
+import Ingredients from "@/Domain/Entity/Ingredients";
+import Item from "@/Domain/Entity/Item";
+import ItemRepository from "@/Domain/Repository/ItemRepository";
 
 export default class ItemRepositoryMemory implements ItemRepository {
     items: Item[];

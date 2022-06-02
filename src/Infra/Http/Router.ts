@@ -1,6 +1,6 @@
-import RepositoryFactory from "../../Domain/Factory/RepositoryFactory";
-import ItemsController from "../Controller/ItemsController";
-import Http from "./Http";
+import RepositoryFactory from "@/Domain/Factory/RepositoryFactory";
+import ItemsController from "@/Infra/Controller/ItemsController";
+import Http from "@/Infra/Http/Http";
 
 export default class Router {
     constructor(readonly http: Http, readonly repositoryFactory: RepositoryFactory) {}

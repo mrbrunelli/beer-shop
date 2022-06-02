@@ -1,5 +1,5 @@
+import Http from "@/Infra/Http/Http";
 import express, { Request, Response, NextFunction } from "express";
-import Http from "./Http";
 
 export default class ExpressAdapter implements Http {
     app: any;

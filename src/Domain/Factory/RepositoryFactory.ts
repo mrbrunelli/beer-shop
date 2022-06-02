@@ -1,4 +1,4 @@
-import ItemRepository from "../Repository/ItemRepository";
+import ItemRepository from "@/Domain/Repository/ItemRepository";
 
 export default interface RepositoryFactory {
     createItemRepository(): ItemRepository;

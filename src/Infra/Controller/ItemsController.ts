@@ -1,12 +1,12 @@
-import GetItem from "../../Application/UseCase/GetItem/GetItem";
-import GetItemOutput from "../../Application/UseCase/GetItem/GetItemOutput";
-import GetItems from "../../Application/UseCase/GetItems/GetItems";
-import GetItemsOutput from "../../Application/UseCase/GetItems/GetItemsOutput";
-import RegisterItem from "../../Application/UseCase/RegisterItem/RegisterItem";
-import RegisterItemInput from "../../Application/UseCase/RegisterItem/RegisterItemInput";
-import RegisterItemOutput from "../../Application/UseCase/RegisterItem/RegisterItemOutput";
-import RepositoryFactory from "../../Domain/Factory/RepositoryFactory";
-import ObjectIdGeneratorAdapter from "../Service/ObjectIdGeneratorAdapter";
+import GetItem from "@/Application/UseCase/GetItem/GetItem";
+import GetItemOutput from "@/Application/UseCase/GetItem/GetItemOutput";
+import GetItems from "@/Application/UseCase/GetItems/GetItems";
+import GetItemsOutput from "@/Application/UseCase/GetItems/GetItemsOutput";
+import RegisterItem from "@/Application/UseCase/RegisterItem/RegisterItem";
+import RegisterItemInput from "@/Application/UseCase/RegisterItem/RegisterItemInput";
+import RegisterItemOutput from "@/Application/UseCase/RegisterItem/RegisterItemOutput";
+import RepositoryFactory from "@/Domain/Factory/RepositoryFactory";
+import ObjectIdGeneratorAdapter from "@/Infra/Service/ObjectIdGeneratorAdapter";
 
 export default class ItemsController {
     constructor(readonly repositoryFactory: RepositoryFactory) {}

@@ -1,9 +1,9 @@
-import Item from "../../../Domain/Entity/Item";
-import RepositoryFactory from "../../../Domain/Factory/RepositoryFactory";
-import ItemRepository from "../../../Domain/Repository/ItemRepository";
-import ObjectIdGenerator from "../../Protocols/ObjectIdGenerator";
-import RegisterItemInput from "./RegisterItemInput";
-import RegisterItemOutput from "./RegisterItemOutput";
+import Item from "@/Domain/Entity/Item";
+import RepositoryFactory from "@/Domain/Factory/RepositoryFactory";
+import ItemRepository from "@/Domain/Repository/ItemRepository";
+import ObjectIdGenerator from "@/Application/Protocols/ObjectIdGenerator";
+import RegisterItemInput from "@/Application/UseCase/RegisterItem/RegisterItemInput";
+import RegisterItemOutput from "@/Application/UseCase/RegisterItem/RegisterItemOutput";
 
 export default class RegisterItem {
     itemRepository: ItemRepository;
