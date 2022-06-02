@@ -1,12 +1,12 @@
 import MongoDBConnectionAdapter from "@/Infra/Database/MongoDBConnectionAdapter";
 import DatabaseRepositoryFactory from "@/Infra/Factory/DatabaseRepositoryFactory";
-import MemoryRepositoryFactory from "@/Infra/Factory/MemoryRepositoryFactory";
 import ExpressAdapter from "@/Infra/Http/ExpressAdapter";
 import Router from "@/Infra/Http/Router";
+import env from "@/Infra/Config/env";
 
-const connection = new MongoDBConnectionAdapter();
+const connection = new MongoDBConnectionAdapter(env.mongoUrl);
 const repositoryFactory = new DatabaseRepositoryFactory(connection);
 const http = new ExpressAdapter();
 const router = new Router(http, repositoryFactory);
 router.init();
-http.listen(3000);
+http.listen(env.port);
