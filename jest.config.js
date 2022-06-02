@@ -1,8 +1,10 @@
 /** @type {import('ts-jest/dist/types').InitialOptionsTsJest} */
 module.exports = {
-    preset: "ts-jest",
-    testEnvironment: "node",
+    preset: "@shelf/jest-mongodb",
     moduleNameMapper: {
         "@/(.*)": "<rootDir>/src/$1",
+    },
+    transform: {
+        ".+\\.ts$": "ts-jest",
     },
 };
