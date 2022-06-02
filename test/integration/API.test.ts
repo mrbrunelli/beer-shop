@@ -7,9 +7,9 @@ import MongoDBConnectionAdapter from "@/Infra/Database/MongoDBConnectionAdapter"
 import DatabaseRepositoryFactory from "@/Infra/Factory/DatabaseRepositoryFactory";
 import ObjectIdGeneratorAdapter from "@/Infra/Service/ObjectIdGeneratorAdapter";
 import env from "@/Infra/Config/env";
-import axios from "axios";
 import ExpressAdapter from "@/Infra/Http/ExpressAdapter";
 import Router from "@/Infra/Http/Router";
+import axios from "axios";
 
 let connection: Connection;
 let repositoryFactory: RepositoryFactory;
