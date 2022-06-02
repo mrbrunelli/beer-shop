@@ -2,7 +2,7 @@ import GetItems from "../../src/Application/UseCase/GetItems/GetItems";
 import RegisterItem from "../../src/Application/UseCase/RegisterItem/RegisterItem";
 import Ingredients from "../../src/Domain/Entity/Ingredients";
 import RepositoryFactory from "../../src/Domain/Factory/RepositoryFactory";
-import ObjectIdGenerator from "../../src/Domain/Service/ObjectIdGenerator";
+import ObjectIdGenerator from "../../src/Application/Protocols/ObjectIdGenerator";
 import Connection from "../../src/Infra/Database/Connection";
 import MongoDBConnectionAdapter from "../../src/Infra/Database/MongoDBConnectionAdapter";
 import DatabaseRepositoryFactory from "../../src/Infra/Factory/DatabaseRepositoryFactory";

@@ -1,7 +1,7 @@
 import Item from "../../../Domain/Entity/Item";
 import RepositoryFactory from "../../../Domain/Factory/RepositoryFactory";
 import ItemRepository from "../../../Domain/Repository/ItemRepository";
-import ObjectIdGenerator from "../../../Domain/Service/ObjectIdGenerator";
+import ObjectIdGenerator from "../../Protocols/ObjectIdGenerator";
 import RegisterItemInput from "./RegisterItemInput";
 import RegisterItemOutput from "./RegisterItemOutput";
 
